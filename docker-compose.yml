@@ -1,0 +1,11 @@
+# This docker file is for development/local environment
+version: '3.7'
+services:
+  cnps_sim1:
+    image: cnps_sim1
+    container_name: cnps_sim1
+    network_mode: host
+    logging:
+      driver: syslog
+      #options:
+      #  syslog-address: "tcp://localhost:5067"

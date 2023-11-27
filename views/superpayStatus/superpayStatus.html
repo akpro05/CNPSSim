@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CNPS |Simulator </title>
+    <link rel="stylesheet" href="../../static/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap-extend.css">
+    <link rel="stylesheet" href="../../static/css/master_style.css">
+
+</head>
+
+<body class="hold-transition skin-blue-light sidebar-mini">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-11">
+                <div class="box">
+                    <form action="/SuperpayTransactionStatus" method="post">
+                        <div class="box-body">
+                            <center>
+                                <h2 style="color:blue">Fetch Superpay Transaction Status</h2>
+                            </center>
+                            <div class=form-row>
+                                <div class="row">
+                                 <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>SuperEsb Producer Access Code</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="superesb_producer_access_code" id="superesb_producer_access_code" type="text" value="{{.SIMU_1_ACCESS_CODE}}" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Access Code</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="access_code" id="access_code" type="text" value="+i3NA9wW5GBfGgaQ7FQq2jsJJi7YbMfZzlohJpOc94uBKRX81Is/7WJfi1GwwMB+" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Request Id</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="request_id" id="request_id" type="text" value="{{.request_id}}" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Channel</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="channel" id="channel" type="text" value="B2CWebApp" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>User Type</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="user_type" id="user_type" type="text" value="CUSTOMER" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Transaction Number</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="txn_number" id="txn_number" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Mobile</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="mobile" id="mobile" type="text" value="9876543210">
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                      <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Language</label>
+                                            <div class="input-group">
+                                                <input class="form-control" name="language" id="language" type="text" value="en">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Response</label>
+                                            <div class="input-group">
+                                             <textarea class="form-control" id="response" name="response"  rows="10" cols="50"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                     
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-sm-12 text-center">
+                                <button class="btn btn-info" value="Submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-sidebar-bg"></div>
+    <script src="../../static/assets/vendor_components/jquery/dist/jquery.min.js"></script>
+    
+    <script>
+        var jsonStr = '{{.response}}'; // This is your JSON string
+    var jsonObject = JSON.parse(jsonStr); // Parse the JSON string into a JavaScript object
+    var formattedJson = JSON.stringify(jsonObject, null, 2); // Format the JavaScript object
+    var textarea = document.getElementById("response");
+    textarea.value = formattedJson; // Set the formatted JSON in the textarea
+
+    </script>
+
+</body>
+
+</html>

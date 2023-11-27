@@ -1,0 +1,123 @@
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 11px;
+}
+
+.banklogodiv {
+    border: 1px solid;
+    border-radius: 15px;
+    height: 85px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+		max-width: 145px;
+}
+
+#content {
+	background: #FFF;
+	position: absolute;
+	left: 59%;
+	margin: 0 0 0 -513px;
+	width: 900px;
+	box-shadow: 0 0 20px #000;
+	-moz-box-shadow: 0 0 20px #000;
+	-webkit-box-shadow: 0 0 6px #000;
+	height: 548px;
+}
+
+.menu li {
+	float: left;
+	position: relative;
+}
+
+.menu li a:hover {
+	background: -webkit-gradient(linear, center top, center bottom, from(#ededed),
+		to(#fff));
+	background-image: linear-gradient(#ededed, #fff);
+	border-radius: 20px;
+	box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+	color: #222;
+	padding: 6px
+}
+/* Persistant Hover State */
+.menu li:hover a {
+	background: -webkit-gradient(linear, center top, center bottom, from(#ccc),
+		to(#1DDF32));
+	background-image: linear-gradient(#ccc, #1DDF32);
+	border-radius: 20px;
+	box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+	color: #222;
+}
+.fa-check-circle{
+	font-size: 24px;
+	position: absolute;
+	left: -10px;
+	top: 27px;
+	color: green !important;
+}
+
+.menu li:hover ul a {
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.menu li:hover ul li a:hover {
+	background: -webkit-gradient(linear, center top, center bottom, from(#eee),
+		to(#fff));
+	background-image: linear-gradient(#ededed, #fff);
+	border-radius: 20px;
+	box-shadow: inset 0px 0px 4px 2px #c7183e;
+}
+
+.menu  a:active {
+	background-color: #61d26d;
+	border-radius: 20px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.fa {
+	color: orange;
+}
+
+.selected1 {
+	box-shadow: 0px 12px 22px 10px orange;
+}
+.panel-body{
+	padding: 3px;
+}
+.vl {
+	border-left: 2px solid #ef9321;
+    height: 344px;
+    margin-top: -30px;
+}
+#success_flash{
+margin-top: -28px;
+    margin-right: -175px;
+    /* top: 3px; */
+    font-size: 40px;
+}
+.active{
+  background: -webkit-gradient(linear, center top, center bottom, from(#ededed),
+    to(#fff));
+  background-image: linear-gradient(#ededed, #319a17);
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 1px 16px rgba(76, 183, 69);
+  color: #222;
+  padding: 6px
+}
+
+
+.panel:hover {
+    box-shadow: 0 0 15px 0px #9e9c9e;
+}
+
+.InputtagHide{
+	display: none;
+}
+.error{
+	color:red;
+}

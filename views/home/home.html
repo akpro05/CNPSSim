@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+
+
+    <style>
+      .invoice-box {
+        max-width: 1000px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+      }
+
+      .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+      }
+
+      .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+      }
+
+      .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+      }
+
+      .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+      }
+
+      .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+      }
+
+      .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+      }
+
+      .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+      }
+
+      .invoice-box table tr.details td {
+        padding-bottom: 20px;
+      }
+
+      .invoice-box table tr.item td {
+        border-bottom: 1px solid #eee;
+      }
+
+      .invoice-box table tr.item.last td {
+        border-bottom: none;
+      }
+
+      .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+
+        .invoice-box table tr.information table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      /** RTL **/
+      .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      }
+
+      .rtl table {
+        text-align: right;
+      }
+
+      .rtl table tr td:nth-child(2) {
+        text-align: left;
+      }
+
+      .d-1 {
+        --b: 4px;
+        /* border length*/
+        --c: 20px;
+        /* the cube perspective */
+
+        --g: calc(var(--c)*0.707);
+        /* 0.707 = cos(45deg) = sin(45deg) */
+
+
+        padding: 8px;
+        transition: 0.5s;
+        border: solid transparent;
+        border-width: var(--b) var(--b) calc(var(--c) + var(--b)) calc(var(--c) + var(--b));
+        background:
+          linear-gradient(-45deg, transparent var(--g), rgba(255, 255, 255, 0.6) 0) left /var(--c) 100%,
+          linear-gradient(135deg, transparent var(--g), rgba(255, 255, 255, 0.3) 0) bottom /100% var(--c),
+          conic-gradient(from -90deg at top var(--b) right var(--b), currentColor 270deg, transparent 0),
+          conic-gradient(from 90deg at bottom calc(var(--c) + var(--b)) left calc(var(--c) + var(--b)), currentColor 270deg, transparent 0);
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        transform: translate(calc(var(--c)/-1), calc(var(--c)/1));
+        clip-path:
+          polygon(var(--c) 0%, var(--c) 0%,
+            100% 0%,
+            100% calc(100% - var(--c)), 100% calc(100% - var(--c)),
+            var(--c) calc(100% - var(--c)),
+            var(--c) calc(100% - var(--c)));
+      }
+
+      .d-1:hover {
+        transform: translate(0, 0);
+        clip-path:
+          polygon(0% var(--c), var(--c) 0%,
+            100% 0%,
+            100% calc(100% - var(--c)), calc(100% - var(--c)) 100%,
+            0% 100%, 0% 100%);
+      }
+
+    </style>
+     <title>CNPS Simulator 1</title>
+  </head>
+
+  <body>
+    <h1>
+      CNPS Simulator 1
+    </h1>
+    <div class="invoice-box">
+      <form action="/dummy" name="dummy" method="post" id="dummy">
+        <!-- <input type="text" name="get_pg_ip" id="get_pg_ip" value="localhost"><br> -->
+
+        <a href="/dummystatus">
+          <button class="d-1" style="font-weight:bold;font-size:25px;" type="button">Check Status</button></a>
+
+        <button class="d-1" type="submit" style="font-weight:bold;font-size:25px;" value="Submit"> Dummy Payment </button>
+        <a href="/SuperpayTransactionStatus">
+          <button class="d-1" style="font-weight:bold;font-size:25px;" type="button">Check Superpay Transaction Status</button>
+        </a>
+      </form>
+    </div>
+  </body>
+
+</html>
