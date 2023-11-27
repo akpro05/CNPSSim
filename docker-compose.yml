@@ -2,7 +2,7 @@
 version: '3.7'
 services:
   cnps_sim1:
-    image: cnps_sim1
+    image: pro05/superesb-local-cnpssim:latest
     container_name: cnps_sim1
     network_mode: host
     logging:
